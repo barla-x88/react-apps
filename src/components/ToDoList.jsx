@@ -1,13 +1,26 @@
 import { useState } from "react";
 
 export const ToDoList = function () {
-  const [list, setList] = useState([]);
+  //holds tasks saved in localstorage
+  let storedTasks = [];
+
+  //check if tasks are in localstorage
+  if (getLocalStorage()) {
+    storedTasks = getLocalStorage();
+  }
+
+  const [list, setList] = useState(storedTasks);
 
   const addTaskToList = function (e) {
     const task = e.target.parentElement.querySelector("#taskInput");
-    list.push({ taskName: task.value, id: crypto.randomUUID() });
+    list.push({
+      taskName: task.value,
+      id: crypto.randomUUID(),
+      taskStatus: "",
+    });
     task.value = "";
     setList([...list]);
+    setLocalStorage(list);
   };
 
   const markDone = (e) => {
@@ -16,7 +29,16 @@ export const ToDoList = function () {
       return;
     }
     e.target.style.textDecoration = "line-through";
+    // console.log(e.target.getAttribute("dataid"));
   };
+
+  function setLocalStorage(tasks) {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
+
+  function getLocalStorage() {
+    return JSON.parse(localStorage.getItem("tasks"));
+  }
 
   return (
     <div>
@@ -30,6 +52,7 @@ export const ToDoList = function () {
           type="button"
           onClick={() => {
             setList([]);
+            setLocalStorage([]);
           }}
         >
           Delete All
@@ -38,12 +61,14 @@ export const ToDoList = function () {
       <div className="tasks">
         <ul>
           {list.map((task) => (
-            <li key={task.id} onClick={markDone}>
+            <li key={task.id} onClick={markDone} dataid={task.id}>
               {task.taskName}
               <button
-                onClick={() =>
-                  setList(list.filter((job) => job.id !== task.id))
-                }
+                onClick={() => {
+                  const newTasks = list.filter((job) => job.id !== task.id);
+                  setLocalStorage(newTasks);
+                  setList(newTasks);
+                }}
               >
                 Delete
               </button>
