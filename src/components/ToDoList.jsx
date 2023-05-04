@@ -24,12 +24,27 @@ export const ToDoList = function () {
   };
 
   const markDone = (e) => {
+    //prevents error in the event bubbling phase
+    //because there is delete btn inside the li element, this is necesssary
+    if (!e.target.classList.contains("task")) return;
+
+    //find task in list
+    const taskId = e.target.getAttribute("dataid");
+    const task = list.find((task) => task.id === taskId);
+
+    //set taskStatus: done or ""
+    task.taskStatus = !task.taskStatus ? "done" : "";
+
+    //update LocalStorage
+    setLocalStorage(list);
+
+    //Apply consmetic changes
+
     if (e.target.style.textDecoration === "line-through") {
       e.target.style.textDecoration = "none";
       return;
     }
     e.target.style.textDecoration = "line-through";
-    // console.log(e.target.getAttribute("dataid"));
   };
 
   function setLocalStorage(tasks) {
@@ -61,7 +76,15 @@ export const ToDoList = function () {
       <div className="tasks">
         <ul>
           {list.map((task) => (
-            <li key={task.id} onClick={markDone} dataid={task.id}>
+            <li
+              className="task"
+              key={task.id}
+              onClick={markDone}
+              dataid={task.id}
+              style={{
+                textDecoration: task.taskStatus ? "line-through" : "none",
+              }}
+            >
               {task.taskName}
               <button
                 onClick={() => {
