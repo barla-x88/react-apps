@@ -40,14 +40,9 @@ const ObjectDisplay = () => {
 
   const handleBtnClick = () => {
     getNextPerson();
-  };
-
-  useEffect(() => {
     setPerson(people[currentPerson]);
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing
-    setBtnName(names[currentPerson + 1] ?? "Peter");
-  }, [currentPerson]);
-
+    setBtnName(names[currentPerson + 1]);
+  };
   return (
     <div>
       <h2>useState object example</h2>
