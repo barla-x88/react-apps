@@ -29,20 +29,28 @@ const ObjectDisplay = () => {
 
   //returns the next person in the array
   const getNextPerson = () => {
-    const index = currentPerson < names.length - 1 ? currentPerson + 1 : 0;
-
     //sets the current person to next person in the line
-    setCurrentPerson(index);
+    setCurrentPerson((prevIndex) => {
+      const index = prevIndex < names.length - 1 ? prevIndex + 1 : 0;
+      setPerson(people[index]);
+      setBtnName(names[index + 1] ?? names[0]);
+      return index;
+    });
   };
 
+  //For initial Render
   const [person, setPerson] = useState(people[currentPerson]);
   const [btnName, setBtnName] = useState(names[currentPerson + 1]);
 
   const handleBtnClick = () => {
     getNextPerson();
-    setPerson(people[currentPerson]);
-    setBtnName(names[currentPerson + 1]);
   };
+
+  // useEffect(() => {
+  //   setPerson(people[currentPerson]);
+  //   setBtnName(names[currentPerson + 1]);
+  // }, [currentPerson]);
+
   return (
     <div>
       <h2>useState object example</h2>
