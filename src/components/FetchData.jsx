@@ -37,20 +37,22 @@ const FetchData = () => {
     );
   }
 
+  // destrucure user properties
+  const { avatar_url, login, name, html_url, bio } = user;
   return (
     <div className="container">
       <div>
-        <img src={user.avatar_url} alt={user.login} className="user-img" />
+        <img src={avatar_url} alt={login} className="user-img" />
       </div>
       <div>
         <h2>
-          {user.name}
+          {name}
           <br></br>
           <span>
-            <a href={user.html_url}>{user.login}</a>
+            <a href={html_url}>{login}</a>
           </span>
         </h2>
-        <p>{user.bio}</p>
+        <p>{bio}</p>
       </div>
     </div>
   );
