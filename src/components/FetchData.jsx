@@ -29,16 +29,12 @@ const FetchData = () => {
     });
   }, []);
 
-  if (!user) {
-    return (
-      <div className="loadDiv">
-        <BarLoader color="#36d7b7" width={300} />
-      </div>
-    );
-  }
+  //using ternary operator to return element conditionally
+  //passing parameters by using spread operator
+  return !user ? <LoadingSpinner /> : <DisplayGithubUser {...user} />;
+};
 
-  // destrucure user properties
-  const { avatar_url, login, name, html_url, bio } = user;
+function DisplayGithubUser({ avatar_url, login, name, html_url, bio }) {
   return (
     <div className="container">
       <div>
@@ -56,5 +52,15 @@ const FetchData = () => {
       </div>
     </div>
   );
-};
+}
+
+function LoadingSpinner() {
+  console.log("spinner");
+  return (
+    <div className="loadDiv">
+      <BarLoader color="#36d7b7" width={300} />
+    </div>
+  );
+}
+
 export default FetchData;
