@@ -1,12 +1,6 @@
-import "./App.css";
-import CleanupFn from "./components/CleanupFn";
+import Navbar from "./components/Navbar";
 
-function App() {
-  return (
-    <div>
-      <CleanupFn />
-    </div>
-  );
-}
-
+const App = () => {
+  return <Navbar />;
+};
 export default App;
