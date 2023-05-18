@@ -1,10 +1,9 @@
-import { Home, About } from "./pages";
+import MainComponent from "./pages";
 
 const App = () => {
   return (
     <div>
-      <Home />
-      <About />
+      <MainComponent />
     </div>
   );
 };
