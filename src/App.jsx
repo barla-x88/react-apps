@@ -1,10 +1,6 @@
-import MainComponent from "./pages";
+import List from "./components/List";
 
 const App = () => {
-  return (
-    <div>
-      <MainComponent />
-    </div>
-  );
+  return <List />;
 };
 export default App;
