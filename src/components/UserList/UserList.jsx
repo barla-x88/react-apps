@@ -1,6 +1,6 @@
 import "./UserList.css";
 import { data } from "../../data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const User = () => {
   const [users, setUsers] = useState(data);
@@ -9,11 +9,16 @@ const User = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const name = inputValue;
-    const previousId = users.at(-1).id;
+    const previousId = users.at(-1)?.id || 0;
     const currentId = previousId + 1;
 
     setUsers([...users, { id: currentId, name }]);
   };
+
+  // clear input field after rendering
+  useEffect(() => {
+    setInputValue("");
+  }, [users]);
 
   return (
     <div className="form">
