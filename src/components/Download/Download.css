@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+.terms,
+.downlaod {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.download {
+  justify-content: center;
+}
+
+body {
+  height: 100vh;
+}
+
+.terms,
+.download {
+  width: 600px;
+  height: 90vh;
+}
+
+.terms div {
+  height: 70vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.form input[type="submit"] {
+  display: block;
+  margin: 10px 0;
+  width: 300px;
+  padding: 10px;
+  outline-color: rgb(47, 47, 231);
+}
+
+input[type="submit"] {
+  color: #fff;
+  background-color: rgb(47, 47, 231);
+  font-size: 15px;
+}

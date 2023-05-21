@@ -1,6 +1,6 @@
-import Signup from "./components/Signup/Signup";
+import Download from "./components/Download";
 
 const App = () => {
-  return <Signup />;
+  return <Download />;
 };
 export default App;
