@@ -1,6 +1,6 @@
-import UserList from "./components/UserList";
+import Signup from "./components/Signup/Signup";
 
 const App = () => {
-  return <UserList />;
+  return <Signup />;
 };
 export default App;
