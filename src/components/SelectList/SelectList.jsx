@@ -12,7 +12,7 @@ const SelectList = () => {
     <div className="form">
       <h1>What framework do you use?</h1>
       <form onSubmit={() => {}}>
-        <select name="framework" onChange={handleFramework} value={framework}>
+        <select name="framework" onChange={handleFramework}>
           {frameworks.map((fw, index) => (
             <option value={fw} key={index}>
               {fw}
