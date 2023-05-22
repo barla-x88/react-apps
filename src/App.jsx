@@ -1,6 +1,6 @@
-import Download from "./components/Download";
+import SelectList from "./components/SelectList";
 
 const App = () => {
-  return <Download />;
+  return <SelectList />;
 };
 export default App;

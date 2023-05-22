@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+body {
+  height: 100vh;
+}
+
+.form {
+  width: 600px;
+}
+
+.form label,
+.form input {
+  display: block;
+  margin: 10px 0;
+  width: 300px;
+  padding: 10px;
+  outline-color: rgb(47, 47, 231);
+}
+
+input[type="submit"] {
+  color: #fff;
+  background-color: rgb(47, 47, 231);
+  font-size: 15px;
+}
