@@ -1,6 +1,6 @@
-import SelectList from "./components/SelectList";
+import UncontrolledInput from "./components/UncontrolledInput";
 
 const App = () => {
-  return <SelectList />;
+  return <UncontrolledInput />;
 };
 export default App;
