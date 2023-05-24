@@ -1,6 +1,6 @@
-import UncontrolledInput from "./components/UncontrolledInput";
+import DummyTextGenerator from "./components/DummyTextGenerator";
 
 const App = () => {
-  return <UncontrolledInput />;
+  return <DummyTextGenerator />;
 };
 export default App;
