@@ -1,6 +1,13 @@
-import DummyTextGenerator from "./components/DummyTextGenerator";
+import ColorGenerator from "./components/ColorGenerator";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
-  return <DummyTextGenerator />;
+  return (
+    <div>
+      <ToastContainer position="top-center" />
+      <ColorGenerator fn={toast} />
+    </div>
+  );
 };
 export default App;

@@ -1,0 +1,15 @@
+form {
+  display: flex;
+  align-items: center;
+  min-width: fit-content;
+}
+
+form input {
+  margin: 0.5rem;
+}
+
+input[type="color"] {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
