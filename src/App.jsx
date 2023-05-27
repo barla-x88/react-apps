@@ -1,13 +1,6 @@
-import ColorGenerator from "./components/ColorGenerator";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import GroceryBud from "./components/GroceryBud/GroceryBud";
 
 const App = () => {
-  return (
-    <div>
-      <ToastContainer position="top-center" />
-      <ColorGenerator fn={toast} />
-    </div>
-  );
+  return <GroceryBud />;
 };
 export default App;
