@@ -4,23 +4,18 @@ const App = () => {
   const [submitCount, setSubmitCount] = useState(0);
 
   const refContainer = useRef(null);
+  const isMounted = useRef(false);
 
-  console.log(refContainer); // {current: null} on initial render
-
-  //runs after the render
-  //this will run only once after the initial render because
-  //dependency array is empty
   useEffect(() => {
-    //setting value manually
-    //this will not trigger rerender
-    refContainer.current = document.querySelector("#text");
-  }, []);
+    if (!isMounted.current) {
+      isMounted.current = true;
+      return;
+    }
+    console.log(submitCount);
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log(refContainer.current.value);
-
     //this will trigger rerender
     setSubmitCount(submitCount + 1);
   };
@@ -28,7 +23,7 @@ const App = () => {
     <div className="formContainer">
       <form onSubmit={handleSubmit}>
         <h1>Submit count : {submitCount}</h1>
-        <input type="text" id="text" />
+        <input type="text" id="text" ref={refContainer} />
         <input type="submit" value="submit" />
       </form>
     </div>
