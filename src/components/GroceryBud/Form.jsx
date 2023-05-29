@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-const Form = ({ addItemToList }) => {
+const Form = ({ addItemToListFn }) => {
   const [itemName, setItemName] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const item = itemName.trim();
     if (!item) console.warn("Input Item Name");
-
+    addItemToListFn(item);
     setItemName("");
   };
   return (

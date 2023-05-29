@@ -11,3 +11,4 @@ List of Some Useful extensions
 
 List of Useful libraries
 React-Toastify - add toast notification to your applications
+nanoid - secure URL-friendly unique string ID generator

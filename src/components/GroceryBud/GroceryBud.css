@@ -5,7 +5,7 @@ body {
   align-items: center;
 }
 
-.app {
+.app-container {
   background-color: #383737d0;
   padding: 2rem;
 }
@@ -41,4 +41,34 @@ h1 {
   cursor: pointer;
   font-weight: 700;
   /* width: 3rem; */
+}
+
+.shopping-list {
+  list-style-type: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0;
+}
+
+.shopping-list li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 15px 0;
+  list-style-position: outside;
+  padding-left: 10px;
+}
+
+li button {
+  margin-left: auto;
+  margin-right: 15px;
+  font-weight: 600;
+  padding: 10px;
+}
+
+li input {
+  margin-right: 10px;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
 }
