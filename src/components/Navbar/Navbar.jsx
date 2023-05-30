@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import "./Navbar.css";
-import { links } from "./data";
+import { links, social } from "./data";
 import Link from "./Link";
 
 const Navbar = () => {
@@ -34,6 +34,13 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
+      <ul className="social-links">
+        {social.map((socialIcon) => (
+          <li key={socialIcon.id} className="social-link">
+            <a href={socialIcon.url}>{socialIcon.icon}</a>
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 };

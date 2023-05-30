@@ -63,6 +63,8 @@ html {
   color: var(--color-secondary);
   text-transform: uppercase;
   text-decoration: none;
+  border: 0px solid transparent;
+  transition: border 0.3s ease-in;
 }
 
 .link a:hover {
@@ -89,13 +91,25 @@ html {
   transition: height 0.5s ease-in;
 }
 
+.social-links {
+  display: none;
+}
+
 @media screen and (min-width: 900px) {
   body {
     background-color: rgb(37, 36, 36);
   }
 
+  .navbar {
+    justify-content: space-around;
+  }
+
   .links-container {
-    position: relative;
+    position: unset;
+    width: 600px;
+    /* need to always show container on big screen */
+    /* marking important to override inline styles */
+    height: auto !important;
   }
 
   .links {
@@ -105,5 +119,17 @@ html {
 
   .burgers {
     display: none;
+  }
+
+  .social-links {
+    list-style: none;
+    display: flex;
+  }
+
+  .social-link {
+    margin: 0 0.5rem;
+  }
+  .social-links a {
+    color: var(--color-secondary);
   }
 }
