@@ -1,6 +1,6 @@
-import Navbar from "./components/Navbar";
+import ToggleExample from "./components/ToggleExample";
 
 const App = () => {
-  return <Navbar />;
+  return <ToggleExample />;
 };
 export default App;
