@@ -1,6 +1,12 @@
-import ToggleExample from "./components/ToggleExample";
+import FetchData from "./components/FetchData/FetchData";
 
-const App = () => {
-  return <ToggleExample />;
-};
+function App() {
+  return (
+    <div>
+      <h1>Github User</h1>
+      <FetchData />
+    </div>
+  );
+}
+
 export default App;
