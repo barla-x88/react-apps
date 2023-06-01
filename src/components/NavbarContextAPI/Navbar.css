@@ -1,0 +1,51 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+ul li {
+  margin: 0 1rem;
+}
+li a {
+  font-weight: bold;
+  color: rgb(55, 117, 242);
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+button {
+  margin-left: auto;
+  padding: 10px;
+  background-color: rgb(55, 117, 242);
+  color: #fff;
+  font-weight: bold;
+}
+
+.usercontainer {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.usercontainer > * {
+  margin: 0 1rem;
+}

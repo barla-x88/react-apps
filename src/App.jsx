@@ -1,12 +1,7 @@
-import FetchData from "./components/FetchData/FetchData";
+import Navbar from "./components/NavbarContextAPI/Navbar";
 
 function App() {
-  return (
-    <div>
-      <h1>Github User</h1>
-      <FetchData />
-    </div>
-  );
+  return <Navbar />;
 }
 
 export default App;
