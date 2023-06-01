@@ -1,4 +1,9 @@
-const UserContainer = ({ user, logout }) => {
+import { useContext } from "react";
+import { navbarContext } from "./Navbar";
+
+const UserContainer = () => {
+  // since we provided the object as value in parent component
+  const { user, logout } = useContext(navbarContext);
   return (
     <div className="usercontainer">
       {user && <h4>Hello There, {user.name}</h4>}

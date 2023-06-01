@@ -13,7 +13,7 @@ const data = [
   },
 ];
 
-const NavLinks = ({ user, logout }) => {
+const NavLinks = () => {
   return (
     <>
       <ul>
@@ -23,7 +23,7 @@ const NavLinks = ({ user, logout }) => {
           </li>
         ))}
       </ul>
-      <UserContainer user={user} logout={logout} />
+      <UserContainer />
     </>
   );
 };
