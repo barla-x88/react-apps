@@ -10,6 +10,7 @@ List of Some Useful extensions
 - code spell checker - checks for spelling errors in code
 
 List of Useful libraries
-React-Toastify - add toast notification to your applications
-nanoid - secure URL-friendly unique string ID generator
-react-icons - icons for your project
+
+- React-Toastify - add toast notification to your applications
+- nanoid - secure URL-friendly unique string ID generator
+- react-icons - icons for your project
