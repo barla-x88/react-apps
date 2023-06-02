@@ -1,7 +1,7 @@
-import Navbar from "./components/NavbarContextAPI/Navbar";
+import Home from "./components/Sidebar/Home";
 
 function App() {
-  return <Navbar />;
+  return <Home />;
 }
 
 export default App;
