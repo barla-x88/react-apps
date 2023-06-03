@@ -21,13 +21,10 @@ const AppProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   //functions to manipulate state values
-  const openSidebar = () => {
-    setIsSidebarOpen(true);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const closeSidebar = () => {
-    setIsSidebarOpen(false);
-  };
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -41,9 +38,8 @@ const AppProvider = ({ children }) => {
       value={{
         isSidebarOpen,
         isModalOpen,
-        openSidebar,
+        toggleSidebar,
         openModal,
-        closeSidebar,
         closeModal,
       }}
     >

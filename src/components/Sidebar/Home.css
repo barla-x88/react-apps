@@ -9,32 +9,91 @@ html {
   padding: 0;
   box-sizing: inherit;
 }
-body {
-  height: 100vh;
-}
-
-#root {
-  height: 100%;
-}
 
 main {
   display: flex;
   background-color: cadetblue;
-  height: 100%;
+  min-height: 100vh;
+  align-items: center;
 }
 
-.sidebar,
-.modal {
-  height: 100%;
+main button {
+  display: block;
+  margin: 0 auto;
 }
 
 .sidebar {
-  width: 40%;
+  width: 25%;
+  height: 100vh;
+  /* border: 2px solid red; */
+  overflow: hidden;
 }
 
-.modal {
-  width: 60%;
+.modal-overlay {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.bars {
+  font-size: 3rem;
+  color: rgb(36, 38, 37);
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  cursor: pointer;
+}
+
+.links-container {
+  background-color: beige;
+
+  height: 100%;
+  padding: 4rem 2rem;
+  list-style: none;
+}
+
+.links-container li {
+  margin: 1.5rem 0;
+}
+
+.links-container a {
+  text-decoration: none;
+  color: rgb(34, 33, 33);
+  margin-left: 10px;
+}
+
+.modal-overlay {
+  background-color: #1f2025dd;
+  background-image: url("./19335268_6085949.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.modal-overlay > div {
+  width: 600px;
+  height: 300px;
+  background-color: rgb(255 255 255 / 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.modal-overlay > div > span {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  border-radius: 50%;
+  background-color: darkorange;
+  cursor: pointer;
 }
