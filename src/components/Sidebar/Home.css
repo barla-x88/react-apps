@@ -15,6 +15,7 @@ main {
   background-color: cadetblue;
   min-height: 100vh;
   align-items: center;
+  justify-content: center;
 }
 
 main button {
@@ -22,37 +23,39 @@ main button {
   margin: 0 auto;
 }
 
-.sidebar {
-  width: 25%;
-  height: 100vh;
-  /* border: 2px solid red; */
-  overflow: hidden;
-}
-
-.modal-overlay {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .bars {
   font-size: 3rem;
   color: rgb(36, 38, 37);
   position: absolute;
   top: 1rem;
-  left: 1rem;
+  left: 3rem;
   cursor: pointer;
+  z-index: 100000;
+}
+
+.sidebar {
+  background-color: beige;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  transition: transform 0.3s ease-in;
+  transform: translateX(-100%);
+}
+
+.show-sidebar {
+  transform: translateX(0%);
 }
 
 .links-container {
-  background-color: beige;
-
-  height: 100%;
-  padding: 4rem 2rem;
   list-style: none;
+  margin-top: 4rem;
 }
 
 .links-container li {
@@ -66,10 +69,30 @@ main button {
 }
 
 .modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background-color: #1f2025dd;
   background-image: url("./19335268_6085949.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  z-index: -1;
+}
+
+.show-modal {
+  z-index: 10;
+  opacity: 1;
+
+  /* adding these properties because we want the transition to happen */
+  /* after the element is visible */
+  transition-property: opacity;
+  transition-duration: 2s;
 }
 
 .modal-overlay > div {

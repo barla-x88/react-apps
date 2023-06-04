@@ -1,7 +1,7 @@
-import Home from "./components/Sidebar/Home";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
-  return <Home />;
+  return <Sidebar />;
 }
 
 export default App;
