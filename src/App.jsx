@@ -1,7 +1,7 @@
-import Sidebar from "./components/Sidebar/Sidebar";
+import Strapi from "./components/Strapi/";
 
 function App() {
-  return <Sidebar />;
+  return <Strapi />;
 }
 
 export default App;
