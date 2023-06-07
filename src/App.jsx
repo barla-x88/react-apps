@@ -1,4 +1,4 @@
-import Strapi from "./components/Strapi/";
+import Strapi from "./components/Strapi";
 
 function App() {
   return <Strapi />;

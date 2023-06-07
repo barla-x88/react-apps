@@ -12,7 +12,7 @@ export const useGlobalContext = () => useContext(globalContext);
 
 const AppProvider = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+  const [pageId, setPageId] = useState(null);
   //functions to manipulate state values
   const openSidebar = () => {
     setIsSidebarOpen(true);
@@ -27,6 +27,8 @@ const AppProvider = ({ children }) => {
         isSidebarOpen,
         openSidebar,
         closeSidebar,
+        pageId,
+        setPageId,
       }}
     >
       {children}
